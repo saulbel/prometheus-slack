@@ -1,7 +1,0 @@
-route:
-    receiver: 'slack'
-
-receivers:
-    - name: 'slack'
-      webhook_configs:
-      - url: https://ngrok.io # replace with slack channel
