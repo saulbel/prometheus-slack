@@ -13,8 +13,7 @@ prometheus-tutorial
 |    └── prometheus.yml
 |    └── rules.yml
 |    └── grafana/provisioning/datasources
-|         └── prometheus_ds.yml
-|    
+|         └── prometheus_ds.yml    
 └── scripts
      └── setup.sh
 ```
