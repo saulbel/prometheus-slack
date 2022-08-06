@@ -14,7 +14,7 @@ prometheus-tutorial
 |    └── rules.yml
 |    └── grafana/provisioning/datasources
 |         └── prometheus_ds.yml
-|    └──
+|    
 └── scripts
      └── setup.sh
 ```
@@ -79,6 +79,6 @@ Let´s explain a little bit more about how this stack works.
 - `Slack` --> if your company uses this communication tool, you can propose it as an alert reciever too. With this set up all the alerts go to a single channel but we could configure more than one. We can use tags in `rules.yml` to change the severity or even the enviroment of the alerts and we can send them to one channel or another.
 
 ## To improve
-- As we can see this is a very simple project. It works but for example it only contains a couple of alerts and not a single grafana dashboard. So including both of them would be a huge improve to this project.
-- As we have said before, we could create more alerts and tag them so we can create more channel in Slack. We could also use a "frontend" such us alerta.io or karma in order to display these alerts in we wanted to. 
-- As it is, we use 4 different docker images, one for each tool. In order to improve this we could create a custom docker image and build it. Also with this custom docker image we could create a CI pipeline with, for example, Github Actions in order to push into a container registry.
+- As we can see this is a very simple project. It works but for example it only contains a couple of alerts and not a single grafana dashboard. So creating more alerts and some dashboards would be a huge improvement.
+- As we have said before, we could create more alerts and tag them so we can create more channels in Slack. We could also use a "frontend" such us `alerta.io` or `karma` in order to display these alerts in we wanted to. 
+- As it is, we use 4 different docker images, one for each tool. In order to improve this we could create a custom docker image and build it. Also with this custom docker image we could create a `CI pipeline` with, for example, `GitHub Actions` in order to push into a container registry.
