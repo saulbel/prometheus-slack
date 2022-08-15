@@ -12,6 +12,7 @@ prometheus-tutorial
 |    └── docker-compose.yml
 |    └── prometheus.yml
 |    └── rules.yml
+|    └── karma.yml
 |    └── grafana/provisioning/datasources
 |         └── prometheus_ds.yml    
 └── scripts
@@ -41,6 +42,7 @@ Creating prometheus_nodeexporter_1 ... done
 Creating prometheus_alertmanager_1 ... done
 Creating prometheus_grafana_1      ... done
 Creating prometheus_prometheus_1   ... done
+Creating prometheus_karma_1        ... done
 
 ````
 - To check the status of the containers:
@@ -51,6 +53,7 @@ b72ca97a0667   prom/prometheus:latest      "/bin/prometheus --c…"   7 seconds 
 0f2068810e7e   prom/node-exporter:latest   "/bin/node_exporter …"   7 seconds ago   Up 3 seconds   0.0.0.0:9100->9100/tcp, :::9100->9100/tcp   prometheus_nodeexporter_1
 34dc1741b869   grafana/grafana:latest      "/run.sh"                7 seconds ago   Up 4 seconds   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   prometheus_grafana_1
 b3851b4e662b   prom/alertmanager:latest    "/bin/alertmanager -…"   7 seconds ago   Up 3 seconds   0.0.0.0:9093->9093/tcp, :::9093->9093/tcp   prometheus_alertmanager_1
+50bdc9c30f9b   ghcr.io/prymitive/karma:latest   "/karma --config.fil…"   43 seconds ago   Up 22 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   prometheus_karma_1
 ````
 
 ## Second task: configure Slack
@@ -66,6 +69,10 @@ localhost:9090
 ````
 localhost:9093
 ````
+- To access karma
+````
+localhost:8080
+````
 - To access grafana
 ````
 localhost:3000
@@ -73,11 +80,12 @@ localhost:3000
 Let´s explain a little bit more about how this stack works. 
 - `Prometheus` --> this tool allows to scrap data from servers and stores it in time-series format.
 - `Alertmanager` --> taking the data we have in Prometheus, we are able to create alerts. These alerts can be sent to programs such us `telegram`, `teams` or in this case `slack`. We can use email to send this alerts too.
+- `Karma` --> this is a frontend for Alertmanager. It allows us to visualize alerts much better than in Alertmanager.
 - `Node-exporter` --> this is the agent in charge of exposing the metrics in the server/container for `prometheus` to scrape from. There are more exporters, for example we can use `win-exporter` if our server is a windows one.
 - `Grafana` --> this software allows us to create dashboards to have all our data configured in a good looking way. It will connect to prometheus in order to do so.
 - `Slack` --> if your company uses this communication tool, you can propose it as an alert reciever too. With this set up all the alerts go to a single channel but we could configure more than one. We can use tags in `rules.yml` to change the severity or even the enviroment of the alerts and we can send them to one channel or another.
 
 ## To improve
 - As we can see this is a very simple project. It works but for example it only contains a couple of alerts and not a single grafana dashboard. So creating more alerts and some dashboards would be a huge improvement.
-- As we have said before, we could create more alerts and tag them so we can create more channels in Slack. We could also use a "frontend" such us `alerta.io` or `karma` in order to display these alerts in we wanted to. 
+- As we have said before, we could create more alerts and tag them so we can create more channels in Slack. We could also use another "frontend" called `alerta.io` in order to display these alerts how we wanted to. 
 - As it is, we use 4 different docker images, one for each tool. In order to improve this we could create a custom docker image and build it. Also with this custom docker image we could create a `CI pipeline` with, for example, `GitHub Actions` in order to push into a container registry.
