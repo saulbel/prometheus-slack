@@ -79,7 +79,7 @@ localhost:3000
 ````
 Let´s explain a little bit more about how this stack works. 
 - `Prometheus` --> this tool allows to scrap data from servers and stores it in time-series format.
-- `Alertmanager` --> taking the data we have in Prometheus, we are able to create alerts. These alerts can be sent to programs such us `telegram`, `teams` or in this case `slack`. We can use email to send this alerts too.
+- `Alertmanager` --> taking the data we have in Prometheus, we are able to create alerts. These alerts can be sent to programs such as `telegram`, `teams` or in this case `slack`. We can use email to send this alerts too.
 - `Karma` --> this is a frontend for Alertmanager. It allows us to visualize alerts much better than in Alertmanager.
 - `Node-exporter` --> this is the agent in charge of exposing the metrics in the server/container for `prometheus` to scrape from. There are more exporters, for example we can use `win-exporter` if our server is a windows one.
 - `Grafana` --> this software allows us to create dashboards to have all our data configured in a good looking way. It will connect to prometheus in order to do so.
