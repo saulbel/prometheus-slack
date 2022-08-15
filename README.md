@@ -20,7 +20,7 @@ prometheus-tutorial
 ```
 ## Tasks to accomplish
 - The main idea of this project is to show how we can monitorize our infra in an easy way using `docker-compose`.
-- Configure `prometheus`, `alertmanager`, `node-export` and `grafana` using `docker-compose`.
+- Configure `prometheus`, `alertmanager`, `node-export`, `grafana` and `karma` using `docker-compose`.
 - Use `Slack` to recieve the alerts.
 
 ## How to install the tools
@@ -53,7 +53,7 @@ b72ca97a0667   prom/prometheus:latest      "/bin/prometheus --c…"   7 seconds 
 0f2068810e7e   prom/node-exporter:latest   "/bin/node_exporter …"   7 seconds ago   Up 3 seconds   0.0.0.0:9100->9100/tcp, :::9100->9100/tcp   prometheus_nodeexporter_1
 34dc1741b869   grafana/grafana:latest      "/run.sh"                7 seconds ago   Up 4 seconds   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   prometheus_grafana_1
 b3851b4e662b   prom/alertmanager:latest    "/bin/alertmanager -…"   7 seconds ago   Up 3 seconds   0.0.0.0:9093->9093/tcp, :::9093->9093/tcp   prometheus_alertmanager_1
-50bdc9c30f9b   ghcr.io/prymitive/karma:latest   "/karma --config.fil…"   43 seconds ago   Up 22 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   prometheus_karma_1
+50bdc9c30f9b   ghcr.io/prymitive/karma:latest   "/karma --config.fil…"   7 seconds ago   Up 3 seconds   0.0.0.0:8080->8080/tcp, :::8080->8080/tcp   prometheus_karma_1
 ````
 
 ## Second task: configure Slack
