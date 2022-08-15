@@ -39,5 +39,15 @@ services:
      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
      - grafana-data:/var/lib/grafana
   
+  karma:
+    image: ghcr.io/prymitive/karma:latest
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - ./karma.yml:/etc/karma/karma.yml
+    command:
+      - '--config.file=/etc/karma/karma.yml'
+
 volumes:
    grafana-data:
