@@ -16,7 +16,7 @@ services:
     ports:
       - 9093:9093
     volumes:
-      - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
+      - ./alertmanager_slack.yml:/etc/alertmanager/alertmanager_slack.yml
 
   nodeexporter:
     image: prom/node-exporter:latest
