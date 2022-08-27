@@ -86,5 +86,4 @@ Let´s explain a little bit more about how this stack works.
 - `Slack` --> if your company uses this communication tool, you can propose it as an alert reciever too. With this set up all the alerts go to a single channel but we could configure more than one. We can use tags in `rules.yml` to change the severity or even the enviroment of the alerts and we can send them to one channel or another.
 
 ## To improve
-- As we can see this is a very simple project. It works but for example it only contains a couple of alerts and not a single grafana dashboard. So creating more alerts and some dashboards would be a huge improvement.
-- As we have said before, we could create more alerts and tag them so we can create more channels in Slack. We could also use another "frontend" called `alerta.io` in order to display these alerts how we wanted to. 
+- As we can see this is a very simple project. It works but for example it only contains a couple of alerts and not a single grafana dashboard. So creating more alerts and some dashboards would be a huge improvement. We could also create more slack channels.
