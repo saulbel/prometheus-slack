@@ -8,7 +8,7 @@
 ```
 prometheus-slack
 |── prometheus
-|    └── alertmanager_slack.yml
+|    └── alertmanager.yml
 |    └── docker-compose.yml
 |    └── prometheus.yml
 |    └── rules.yml
