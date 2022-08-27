@@ -1,4 +1,4 @@
-# Prometheus-slack
+# Prometheus-slack-karma
 ## Prerequisites
 * `Docker`
 * `Docker-compose`
@@ -6,7 +6,7 @@
 
 ## Project structure
 ```
-prometheus-slack
+prometheus-slack-karma
 |── prometheus
 |    └── alertmanager.yml
 |    └── docker-compose.yml
