@@ -1,4 +1,4 @@
-# Prometheus-tutorial
+# Prometheus-slack
 ## Prerequisites
 * `Docker`
 * `Docker-compose`
@@ -6,9 +6,9 @@
 
 ## Project structure
 ```
-prometheus-tutorial
+prometheus-slack
 |── prometheus
-|    └── alertmanager.yml
+|    └── alertmanager_slack.yml
 |    └── docker-compose.yml
 |    └── prometheus.yml
 |    └── rules.yml
