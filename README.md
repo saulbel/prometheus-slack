@@ -48,7 +48,7 @@ Creating prometheus_karma_1        ... done
 - To check the status of the containers:
 ````
 $ docker ps
-CONTAINER ID   IMAGE                       COMMAND                  CREATED         STATUS         PORTS                                       NAMES
+CONTAINER ID   IMAGE                            COMMAND                  CREATED         STATUS         PORTS                                       NAMES
 b72ca97a0667   prom/prometheus:latest           "/bin/prometheus --c…"   7 seconds ago   Up 3 seconds   0.0.0.0:9090->9090/tcp, :::9090->9090/tcp   prometheus_prometheus_1
 0f2068810e7e   prom/node-exporter:latest        "/bin/node_exporter …"   7 seconds ago   Up 3 seconds   0.0.0.0:9100->9100/tcp, :::9100->9100/tcp   prometheus_nodeexporter_1
 34dc1741b869   grafana/grafana:latest           "/run.sh"                7 seconds ago   Up 4 seconds   0.0.0.0:3000->3000/tcp, :::3000->3000/tcp   prometheus_grafana_1
